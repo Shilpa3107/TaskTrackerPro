@@ -28,22 +28,45 @@ This is a Kanban board built with **ReactJS** that allows users to manage tasks 
 ## 🏗️ Project Structure  
 
 ```plaintext
-📂 src  
-├── 📂 components  
-│   ├── TaskCard.tsx  
-│   ├── Column.tsx  
-│   ├── AddTaskModal.tsx  
-├── 📂 hooks  
-├── 📂 styles  
-├── 📂 utils  
-├── App.tsx  
-├── index.tsx  
-├── vite.config.ts  
+## 🏗️ Project Structure  
+
+```plaintext
+├── client  
+│   ├── src  
+│   │   ├── components  
+│   │   │   └── ui  
+│   │   │       ├── alert.tsx  
+│   │   │       ├── card.tsx  
+│   │   │       ├── command.tsx  
+│   │   │       ├── sheet.tsx  
+│   │   │       └── ...  
+│   │   ├── store  
+│   │   │   ├── store.ts  
+│   │   │   └── taskSlice.ts  
+│   │   ├── lib  
+│   │   │   └── utils.ts  
+│   │   └── ...  
+│   └── index.html  
 ├── server  
 │   ├── index.ts  
-│   └── routes.ts  
-└── shared  
-    ├── schema.ts
+│   ├── routes.ts  
+│   ├── storage.ts  
+│   └── vite.ts  
+├── shared  
+│   └── schema.ts  
+├── .gitignore  
+├── .replit  
+├── drizzle.config.ts  
+├── generated-icon.png  
+├── package-lock.json  
+├── package.json  
+├── postcss.config.js  
+├── replit.nix  
+├── tailwind.config.ts  
+├── theme.json  
+├── tsconfig.json  
+└── vite.config.ts  
+
 ```
 
 # 🛠️ Tech Stack
