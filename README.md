@@ -44,44 +44,54 @@ This is a Kanban board built with **ReactJS** that allows users to manage tasks 
 │   └── routes.ts  
 └── shared  
     ├── schema.ts
-
+```
 
 # 🛠️ Tech Stack
-Frontend: React, TypeScript
-State Management: Redux
-Styling: MUI (Material UI)
-Backend: Express.js
-Bundler: Vite
-Build Tool: Esbuild
+- Frontend: React, TypeScript
+- State Management: Redux
+- Styling: MUI (Material UI)
+- Backend: Express.js
+- Bundler: Vite
+- Build Tool: Esbuild
 
 ##  💻 Setup Instructions
 1️⃣ Clone the Repository
-
-git clone <your-repo-url>
+``` bash
+git clone https://github.com/Shilpa3107/TaskTrackerPro.git
 cd TaskTrackerPro
+```
 2️⃣ Install Dependencies
+```bash
 npm install
+```
 3️⃣ Build the Project
+```bash
 npm run build
+```
 4️⃣ Start the Server
-bash
-Copy
-Edit
+```bash
 npm run start
+```
+5️⃣ Open in Browser
+```bash
 http://localhost:5000
+```
 ## 🚨 Environment Variables
 Create a .env file in the root directory and add:
-
+```bash
 VITE_API_URL=http://localhost:5000/api
+```
 
 ##  ✅ How to Use
-Create Task – Click the floating button to create a new task.
-Drag and Drop – Move tasks between columns.
-Search – Use the search bar to filter tasks.
-🌟 Future Improvements
-Add user authentication.
-Persist data using local storage or a database.
-Add task priority and due dates.
-🤝 Contributing
+- Create Task – Click the floating button to create a new task.
+- Drag and Drop – Move tasks between columns.
+- Search – Use the search bar to filter tasks.
+
+## 🌟 Future Improvements
+- Add user authentication.
+- Persist data using local storage or a database.
+- Add task priority and due dates.
+
+## 🤝 Contributing
 Feel free to fork the repository, create a new branch, and submit a pull request!
 
