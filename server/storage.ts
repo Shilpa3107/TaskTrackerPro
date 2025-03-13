@@ -1,4 +1,10 @@
+import { drizzle } from "drizzle-orm/neon-http";
+import { neon } from "@neondatabase/serverless";
 import { tasks, type Task, type InsertTask } from "@shared/schema";
+import { eq } from "drizzle-orm";
+
+const sql = neon(process.env.DATABASE_URL!);
+const db = drizzle(sql);
 
 export interface IStorage {
   getTasks(): Promise<Task[]>;
@@ -6,35 +12,29 @@ export interface IStorage {
   updateTaskStatus(id: number, status: string): Promise<Task>;
 }
 
-export class MemStorage implements IStorage {
-  private tasks: Map<number, Task>;
-  private currentId: number;
-
-  constructor() {
-    this.tasks = new Map();
-    this.currentId = 1;
-  }
-
+export class PostgresStorage implements IStorage {
   async getTasks(): Promise<Task[]> {
-    return Array.from(this.tasks.values());
+    return await db.select().from(tasks);
   }
 
   async createTask(insertTask: InsertTask): Promise<Task> {
-    const id = this.currentId++;
-    const task: Task = { ...insertTask, id };
-    this.tasks.set(id, task);
+    const [task] = await db.insert(tasks).values(insertTask).returning();
     return task;
   }
 
   async updateTaskStatus(id: number, status: string): Promise<Task> {
-    const task = this.tasks.get(id);
-    if (!task) {
+    const [updatedTask] = await db
+      .update(tasks)
+      .set({ status })
+      .where(eq(tasks.id, id))
+      .returning();
+
+    if (!updatedTask) {
       throw new Error(`Task with id ${id} not found`);
     }
-    const updatedTask = { ...task, status };
-    this.tasks.set(id, updatedTask);
+
     return updatedTask;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new PostgresStorage();
