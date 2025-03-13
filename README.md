@@ -55,13 +55,11 @@ This is a Kanban board built with **ReactJS** that allows users to manage tasks 
 ├── shared  
 │   └── schema.ts  
 ├── .gitignore  
-├── .replit  
 ├── drizzle.config.ts  
 ├── generated-icon.png  
 ├── package-lock.json  
 ├── package.json  
 ├── postcss.config.js  
-├── replit.nix  
 ├── tailwind.config.ts  
 ├── theme.json  
 ├── tsconfig.json  
