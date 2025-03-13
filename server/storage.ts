@@ -1,10 +1,4 @@
-import { drizzle } from "drizzle-orm/neon-http";
-import { neon } from "@neondatabase/serverless";
-import { tasks, type Task, type InsertTask } from "@shared/schema";
-import { eq } from "drizzle-orm";
-
-const sql = neon(process.env.DATABASE_URL!);
-const db = drizzle(sql);
+import { type Task, type InsertTask } from "@shared/schema";
 
 export interface IStorage {
   getTasks(): Promise<Task[]>;
@@ -12,29 +6,31 @@ export interface IStorage {
   updateTaskStatus(id: number, status: string): Promise<Task>;
 }
 
-export class PostgresStorage implements IStorage {
+let tasks: Task[] = [];
+let idCounter = 1;
+
+export class MemoryStorage implements IStorage {
   async getTasks(): Promise<Task[]> {
-    return await db.select().from(tasks);
+    return tasks;
   }
 
   async createTask(insertTask: InsertTask): Promise<Task> {
-    const [task] = await db.insert(tasks).values(insertTask).returning();
-    return task;
+    const newTask: Task = {
+      id: idCounter++,
+      ...insertTask,
+    };
+    tasks.push(newTask);
+    return newTask;
   }
 
   async updateTaskStatus(id: number, status: string): Promise<Task> {
-    const [updatedTask] = await db
-      .update(tasks)
-      .set({ status })
-      .where(eq(tasks.id, id))
-      .returning();
-
-    if (!updatedTask) {
+    const task = tasks.find((task) => task.id === id);
+    if (!task) {
       throw new Error(`Task with id ${id} not found`);
     }
-
-    return updatedTask;
+    task.status = status;
+    return task;
   }
 }
 
-export const storage = new PostgresStorage();
+export const storage = new MemoryStorage();
