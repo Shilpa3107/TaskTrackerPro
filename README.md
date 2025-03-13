@@ -46,7 +46,7 @@ This is a Kanban board built with **ReactJS** that allows users to manage tasks 
     ├── schema.ts
 
 
-##  🛠️ Tech Stack
+# 🛠️ Tech Stack
 Frontend: React, TypeScript
 State Management: Redux
 Styling: MUI (Material UI)
