@@ -31,3 +31,80 @@ This is a Kanban board built with **ReactJS** that allows users to manage tasks 
 
 ## 🏗️ Project Structure  
 
+📂 src
+├── 📂 components
+│ ├── TaskCard.tsx
+│ ├── Column.tsx
+│ ├── AddTaskModal.tsx
+├── 📂 hooks
+├── 📂 styles
+├── 📂 utils
+├── App.tsx
+├── index.tsx
+├── vite.config.ts
+├── server
+│ ├── index.ts
+│ └── routes.ts
+└── shared
+├── schema.ts
+
+yaml
+Copy
+Edit
+
+---
+
+## 🛠️ Tech Stack  
+
+- **Frontend:** React, TypeScript  
+- **State Management:** Redux  
+- **Styling:** MUI (Material UI)  
+- **Backend:** Express.js  
+- **Bundler:** Vite  
+- **Build Tool:** Esbuild  
+
+---
+
+## 💻 Setup Instructions  
+
+### 1️⃣ Clone the Repository  
+```bash
+git clone <your-repo-url>
+cd TaskTrackerPro
+2️⃣ Install Dependencies
+bash
+Copy
+Edit
+npm install
+3️⃣ Build the Project
+bash
+Copy
+Edit
+npm run build
+4️⃣ Start the Server
+bash
+Copy
+Edit
+npm run start
+5️⃣ Open in Browser
+arduino
+Copy
+Edit
+http://localhost:5000
+🚨 Environment Variables
+Create a .env file in the root directory and add:
+
+bash
+Copy
+Edit
+VITE_API_URL=http://localhost:5000/api
+✅ How to Use
+Create Task – Click the floating button to create a new task.
+Drag and Drop – Move tasks between columns.
+Search – Use the search bar to filter tasks.
+🌟 Future Improvements
+Add user authentication.
+Persist data using local storage or a database.
+Add task priority and due dates.
+🤝 Contributing
+Feel free to fork the repository, create a new branch, and submit a pull request!
