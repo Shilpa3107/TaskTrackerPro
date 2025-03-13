@@ -1,94 +1,33 @@
-📝 Kanban Board Application
-This is a Kanban board built with ReactJS that allows users to manage tasks across different stages: To Do, In Progress, Peer Review, and Done. The board supports drag-and-drop functionality and includes a search feature to filter tasks by title.
+# 📝 Kanban Board Application  
 
-🚀 Features
-✅ Four columns representing task stages:
+This is a Kanban board built with **ReactJS** that allows users to manage tasks across different stages: **To Do**, **In Progress**, **Peer Review**, and **Done**. The board supports drag-and-drop functionality and includes a search feature to filter tasks by title.  
 
-To Do
-In Progress
-Peer Review
-Done
-✅ Drag and Drop:
+---
 
-Tasks can be dragged and dropped between columns.
-Tasks maintain their order after being moved.
-✅ Search:
+## 🚀 Features  
 
-A search bar at the top allows filtering tasks by title.
-Matching tasks are shown while others are hidden.
-✅ Add New Task:
+### ✅ Four columns representing task stages:  
+- To Do  
+- In Progress  
+- Peer Review  
+- Done  
 
-Floating button to create a new task.
-New tasks are added to the "To Do" column.
-✅ Responsive Design:
+### ✅ Drag and Drop:  
+- Tasks can be dragged and dropped between columns.  
+- Tasks maintain their order after being moved.  
 
-Fully responsive on desktop and mobile screens.
-🏗️ Project Structure
-pgsql
-Copy
-Edit
-📂 src
-├── 📂 components
-│   ├── TaskCard.tsx
-│   ├── Column.tsx
-│   ├── AddTaskModal.tsx
-├── 📂 hooks
-├── 📂 styles
-├── 📂 utils
-├── App.tsx
-├── index.tsx
-├── vite.config.ts
-├── server
-│   ├── index.ts
-│   └── routes.ts
-└── shared
-    ├── schema.ts
-🛠️ Tech Stack
-Frontend: React, TypeScript
-State Management: Redux
-Styling: MUI (Material UI)
-Backend: Express.js
-Bundler: Vite
-Build Tool: Esbuild
-💻 Setup Instructions
-1️⃣ Clone the Repository
-bash
-Copy
-Edit
-git clone <your-repo-url>
-cd TaskTrackerPro
-2️⃣ Install Dependencies
-bash
-Copy
-Edit
-npm install
-3️⃣ Build the Project
-bash
-Copy
-Edit
-npm run build
-4️⃣ Start the Server
-bash
-Copy
-Edit
-npm run start
-5️⃣ Open in Browser
-http://localhost:5000
+### ✅ Search:  
+- A search bar at the top allows filtering tasks by title.  
+- Matching tasks are shown while others are hidden.  
 
-🚨 Environment Variables
-Create a .env file in the root directory and add:
+### ✅ Add New Task:  
+- Floating button to create a new task.  
+- New tasks are added to the "To Do" column.  
 
-bash
-Copy
-Edit
-VITE_API_URL=http://localhost:5000/api
-✅ How to Use
-Create Task – Click the floating button to create a new task.
-Drag and Drop – Move tasks between columns.
-Search – Use the search bar to filter tasks.
-🌟 Future Improvements
-Add user authentication.
-Persist data using local storage or a database.
-Add task priority and due dates.
-🤝 Contributing
-Feel free to fork the repository, create a new branch, and submit a pull request!
+### ✅ Responsive Design:  
+- Fully responsive on desktop and mobile screens.  
+
+---
+
+## 🏗️ Project Structure  
+
